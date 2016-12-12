@@ -1,0 +1,45 @@
+{
+  "name": "finding-falcone-heroku",
+  "version": "0.0.0",
+  "license": "MIT",
+  "angular-cli": {},
+  "scripts": {
+    "start": "http-server",
+    "lint": "tslint \"src/**/*.ts\"",
+    "preinstall": "npm install -g http-server",
+    "postinstall": "ng build && mv dist/* ."
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "2.0.0-rc.5",
+    "@angular/compiler": "2.0.0-rc.5",
+    "@angular/core": "2.0.0-rc.5",
+    "@angular/forms": "0.3.0",
+    "@angular/http": "2.0.0-rc.5",
+    "@angular/platform-browser": "2.0.0-rc.5",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.5",
+    "@angular/router": "3.0.0-rc.1",
+    "awesome-typescript-loader": "2.2.1",
+    "@angular/upgrade": "~2.2.0",
+    "angular-in-memory-web-api": "~0.1.15",
+    "core-js": "^2.4.0",
+    "rxjs": "5.0.0-beta.11",
+    "ts-helpers": "^1.1.1",
+    "zone.js": "0.6.12",
+    "angular-cli": "1.0.0-beta.11-webpack.8",
+    "codelyzer": "~0.0.26",
+    "ts-node": "1.2.1",
+    "tslint": "3.13.0",
+    "typescript": "2.0.0"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "2.2.1",
+    "@types/node": "^6.0.42",
+    "angular-cli": "1.0.0-beta.21",
+    "codelyzer": "~1.0.0-beta.3",
+    "protractor": "4.0.9",
+    "ts-node": "1.2.1",
+    "tslint": "3.13.0",
+    "typescript": "~2.0.3"
+  }
+}

@@ -1,0 +1,82 @@
+<div>
+<div *ngIf="!isResultDisplay">
+<h2>
+	{{header}}</h2>
+<br/>
+<br/>
+<table class="alignCenter">
+	<tr>
+		<th><label>Destination 1</label></th>
+		<th><label>Destination 2</label></th>
+		<th><label>Destination 3</label></th>
+		<th><label>Destination 4</label></th>
+	</tr>
+	<tr>
+		<td>
+			<select [(ngModel)]="selectedPlanet[0]" (change)="onPlanetSelect(0)">
+          <option *ngFor="let planet of dest1PlanetArr" [ngValue]="planet">{{planet.name}}</option>
+      </select>
+		</td>
+		<td>
+			<select [(ngModel)]="selectedPlanet[1]" (change)="onPlanetSelect(1)">
+          <option *ngFor="let planet of dest2PlanetArr"  [ngValue]="planet">{{planet.name}}</option>
+      </select>
+		</td>
+		<td>
+			<select [(ngModel)]="selectedPlanet[2]" (change)="onPlanetSelect(2)">
+          <option *ngFor="let planet of dest3PlanetArr"  [ngValue]="planet">{{planet.name}}</option>
+      </select>
+		</td>
+		<td>
+			<select [(ngModel)]="selectedPlanet[3]" (change)="onPlanetSelect(3)">
+          <option *ngFor="let planet of dest4PlanetArr"  [ngValue]="planet">{{planet.name}}</option>
+      </select>
+		</td>
+		<td><span>Time taken:</span>{{timeTaken}}</td>
+	</tr>
+	<tr>
+		<td>
+			<label *ngIf="selectedPlanetBoolArr[0]">
+				<select [(ngModel)]="selectedVehicle[0]" (change)="onVehicleSelect(0)">
+						<option *ngFor="let vehicle of currentVehicleArr" [ngValue]="vehicle" [disabled]="vehicle.totalNumber === 0">{{vehicle.name}}<span>({{vehicle.totalNumber}})</span></option>
+				</select>
+			</label>
+		</td>
+		<td>
+			<label *ngIf="selectedPlanetBoolArr[1]">
+				<select [(ngModel)]="selectedVehicle[1]" (change)="onVehicleSelect(1)">
+						<option *ngFor="let vehicle of currentVehicleArr" [ngValue]="vehicle" [disabled]="vehicle.totalNumber === 0">{{vehicle.name}}<span>({{vehicle.totalNumber}})</span></option>
+				</select>
+			</label>
+		</td>
+		<td>
+			<label *ngIf="selectedPlanetBoolArr[2]">
+				<select [(ngModel)]="selectedVehicle[2]" (change)="onVehicleSelect(2)">
+						<option *ngFor="let vehicle of currentVehicleArr" [ngValue]="vehicle" [disabled]="vehicle.totalNumber === 0">{{vehicle.name}}<span>({{vehicle.totalNumber}})</span></option>
+				</select>
+			</label>
+		</td>
+		<td>
+			<label *ngIf="selectedPlanetBoolArr[3]">
+				<select [(ngModel)]="selectedVehicle[3]" (change)="onVehicleSelect(3)">
+						<option *ngFor="let vehicle of currentVehicleArr" [ngValue]="vehicle" [disabled]="vehicle.totalNumber === 0">{{vehicle.name}}<span>({{vehicle.totalNumber}})</span></option>
+				</select>
+			</label>
+		</td>
+	</tr>
+	</table>
+	<button [disabled]="!isFindValid" (click)="getResult()">Find Falcone!</button>
+	</div>
+	<div *ngIf="isResultDisplay">
+		<div *ngIf="isSuccess">
+			<h1>Success! Congratulations on Finding Falcone, King Shan is Mighty Pleased</h1>
+			<h1>Time taken: {{timeTaken}}</h1>
+			<h1>Planet found: {{planetFound}}</h1>
+		</div>
+		<div *ngIf="!isSuccess">
+			<h1> MISSION FAILED! </h1>
+		</div>
+		<button (click)="goBack()">Start again!</button>
+	</div>
+</div>
+	
