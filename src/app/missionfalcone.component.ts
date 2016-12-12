@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import {Planet} from './Models/planet.model';
 import {Vehicle} from './Models/vehicle.model';
-import {Utility} from './Utils/Utility';
+import {Utility} from './Utils/utility';
 import {PlanetService} from './Services/planets.service';
 import {VehicleService} from './Services/vehicles.service';
 import {TokenService} from './Services/token.service';

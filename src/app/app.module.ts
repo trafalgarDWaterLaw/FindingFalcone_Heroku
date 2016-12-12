@@ -7,7 +7,7 @@ import {FalconeService} from './Services/find.falcone.service';
 import {PlanetService} from './Services/planets.service';
 import {VehicleService} from './Services/vehicles.service';
 import {TokenService} from './Services/token.service';
-import {Utility} from './Utils/Utility';
+import {Utility} from './Utils/utility';
 import {MissionFalcone} from './missionfalcone.component';
 
 @NgModule({
