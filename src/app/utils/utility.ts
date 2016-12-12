@@ -1,5 +1,5 @@
-import {Planet} from '../models/planet.model';
-import {Vehicle} from '../models/vehicle.model';
+import {Planet} from '../Models/planet.model';
+import {Vehicle} from '../Models/vehicle.model';
 
 export class Utility{
 
