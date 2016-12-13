@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {MissionFalcone} from './missionfalcone.component';
 
 @Component({
   selector: 'my-app',
