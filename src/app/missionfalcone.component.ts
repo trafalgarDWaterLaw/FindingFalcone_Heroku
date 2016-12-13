@@ -83,24 +83,22 @@ export class MissionFalcone implements OnInit{
 
     onVehicleSelect(destID:number){
         let idx = this.currentVehicleArr.indexOf(this.selectedVehicle[destID]);
-        if(idx != undefined){
-             this.currentVehicleArr[idx].totalNumber = this.currentVehicleArr[idx].totalNumber - 1;
-            this.currentVehicleArr[idx].isDirty = true;
-            if(this.selectedVehicleBoolArr[destID]){
-                let element = this.currentVehicleArr.find(function(sel){
-                    return sel.id === this.resource1[destID];
-                });
-                let indice = this.currentVehicleArr.indexOf(element);
-                if(this.currentVehicleArr[indice].isDirty){
-                    this.currentVehicleArr[indice].totalNumber = this.currentVehicleArr[indice].totalNumber + 1;
-                    this.currentVehicleArr[indice].isDirty = false;
-                }
+        this.currentVehicleArr[idx].totalNumber = this.currentVehicleArr[idx].totalNumber - 1;
+        this.currentVehicleArr[idx].isDirty = true;
+        if(this.selectedVehicleBoolArr[destID]){
+            let element = this.currentVehicleArr.find(function(sel){
+                return sel.id === this.resource1[destID];
+            });
+            let indice = this.currentVehicleArr.indexOf(element);
+            if(this.currentVehicleArr[indice].isDirty){
+                this.currentVehicleArr[indice].totalNumber = this.currentVehicleArr[indice].totalNumber + 1;
+                this.currentVehicleArr[indice].isDirty = false;
             }
-            this.selectedVehicleBoolArr[destID] = true;
-            this.resource1[destID] = idx;
-            this.isFindValid = this.selectedVehicleBoolArr[0] && this.selectedVehicleBoolArr[1] && this.selectedVehicleBoolArr[2] && this.selectedVehicleBoolArr[3];
-            this.timeTaken = this.utils.updateTimeTaken(this.selectedVehicle, this.selectedPlanet);
         }
+        this.selectedVehicleBoolArr[destID] = true;
+        this.resource1[destID] = idx;
+        this.isFindValid = this.selectedVehicleBoolArr[0] && this.selectedVehicleBoolArr[1] && this.selectedVehicleBoolArr[2] && this.selectedVehicleBoolArr[3];
+        this.timeTaken = this.utils.updateTimeTaken(this.selectedVehicle, this.selectedPlanet);
     }
     getResult(){
         let planetNames:string[] = this.utils.getPlanetNames(this.selectedPlanet);
