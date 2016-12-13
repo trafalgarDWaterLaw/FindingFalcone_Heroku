@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Planet} from '../Models/planet.model';
+import {Planet} from '../models/planet.model';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 

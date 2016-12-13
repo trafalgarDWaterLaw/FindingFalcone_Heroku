@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 import { AppComponent }   from './app.component';
-import {FalconeService} from './Services/find.falcone.service';
-import {PlanetService} from './Services/planets.service';
-import {VehicleService} from './Services/vehicles.service';
-import {TokenService} from './Services/token.service';
-import {Utility} from './Utils/utility';
+import {FalconeService} from './services/find.falcone.service';
+import {PlanetService} from './services/planets.service';
+import {VehicleService} from './services/vehicles.service';
+import {TokenService} from './services/token.service';
+import {Utility} from './utils/utility';
 import {MissionFalcone} from './missionfalcone.component';
 
 @NgModule({
