@@ -5,7 +5,6 @@ export class Utility{
 
     InitializeVehicle(size:number){
         let selecVehArr:Vehicle[];
-        selecVehArr.length = size;
         let dummy:Vehicle;
         dummy.id = -1;
         dummy.isDirty = false;
@@ -14,19 +13,18 @@ export class Utility{
         dummy.speed = 0;
         dummy.totalNumber = 0;
         for(let i=0;i<size;i++){
-            selecVehArr[i] = dummy;
+            selecVehArr.push(dummy);
         }
         return selecVehArr;
     }
     InitializePlanet(size:number){
         let selecPlanArr:Planet[];
-        selecPlanArr.length = size;
         let dummy:Planet;
         dummy.id = -1;
         dummy.name = '';
         dummy.distance = 0;
         for(let i=0;i<size;i++){
-            selecPlanArr[i] = dummy;
+            selecPlanArr.push(dummy);
         }
         return selecPlanArr;
     }
