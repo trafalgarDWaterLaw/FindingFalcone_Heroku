@@ -4,7 +4,7 @@ import {Vehicle} from '../models/vehicle.model';
 export class Utility{
 
     InitializeVehicle(size:number){
-        let selecVehArr:Vehicle[];
+        let selecVehArr:Vehicle[] = [];
         let dummy:Vehicle;
         dummy.id = -1;
         dummy.isDirty = false;
@@ -13,17 +13,19 @@ export class Utility{
         dummy.speed = 0;
         dummy.totalNumber = 0;
         for(let i=0;i<size;i++){
+            console.log('pushing dummy ' + dummy + ' In Array vehicle');
             selecVehArr.push(dummy);
         }
         return selecVehArr;
     }
     InitializePlanet(size:number){
-        let selecPlanArr:Planet[];
+        let selecPlanArr:Planet[] = [];
         let dummy:Planet;
         dummy.id = -1;
         dummy.name = '';
         dummy.distance = 0;
         for(let i=0;i<size;i++){
+            console.log('pushing dummy ' + dummy + ' In Array Planet');
             selecPlanArr.push(dummy);
         }
         return selecPlanArr;
