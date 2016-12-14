@@ -43,8 +43,8 @@ export class MissionFalcone implements OnInit{
   ngOnInit(){
        this.tknSvc.getToken();
        console.log('Out of get token service');
-       this.selectedVehicle = this.utils.InitializeVehicle(4);
-       this.selectedPlanet = this.utils.InitializePlanet(4);
+    //    this.selectedVehicle = this.utils.InitializeVehicle(4);
+    //    this.selectedPlanet = this.utils.InitializePlanet(4);
         for(let i =0;i<4;i++){
             this.selectedPlanetBoolArr.push(false);
             this.selectedVehicleBoolArr.push(false);
