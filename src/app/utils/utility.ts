@@ -3,8 +3,37 @@ import {Vehicle} from '../models/vehicle.model';
 
 export class Utility{
 
+    InitializeVehicle(size:number){
+        let selecVehArr:Vehicle[];
+        selecVehArr.length = size;
+        let dummy:Vehicle;
+        dummy.id = -1;
+        dummy.isDirty = false;
+        dummy.maxDistance = 0;
+        dummy.name = '';
+        dummy.speed = 0;
+        dummy.totalNumber = 0;
+        for(let i=0;i<size;i++){
+            selecVehArr[i] = dummy;
+        }
+        return selecVehArr;
+    }
+    InitializePlanet(size:number){
+        let selecPlanArr:Planet[];
+        selecPlanArr.length = size;
+        let dummy:Planet;
+        dummy.id = -1;
+        dummy.name = '';
+        dummy.distance = 0;
+        for(let i=0;i<size;i++){
+            selecPlanArr[i] = dummy;
+        }
+        return selecPlanArr;
+    }
     updatePlanetArr(planetArr:Planet[], selectedPlanet:Planet[], destID:number, override:boolean){
         let diff:Planet[] = [];
+        console.log('Planet Array reached is ' + planetArr + 'with selected planet as ' + selectedPlanet);
+        console.log('Inside UpdatePlanet Array for destID '+ destID + 'and the Override flag is ' + override);
         for(let i=0;i<planetArr.length;i++){
         let elementFound =  selectedPlanet.find(function(sel){
             if(override){

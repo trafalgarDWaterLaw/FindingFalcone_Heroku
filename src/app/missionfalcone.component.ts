@@ -42,8 +42,8 @@ export class MissionFalcone implements OnInit{
     
   ngOnInit(){
        this.tknSvc.getToken();
-       this.selectedVehicle.length = 4;
-       this.selectedPlanet.length = 4;
+       this.selectedVehicle = this.utils.InitializeVehicle(4);
+       this.selectedPlanet = this.utils.InitializePlanet(4);
         for(let i =0;i<4;i++){
             this.selectedPlanetBoolArr.push(false);
             this.selectedVehicleBoolArr.push(false);
@@ -119,8 +119,8 @@ export class MissionFalcone implements OnInit{
     goBack(){
         this.isFindValid = false;
         this.isResultDisplay = false;
-        this.selectedPlanetBoolArr.length = 0; 
-        this.selectedVehicleBoolArr.length = 0;
+        this.selectedVehicle = this.utils.InitializeVehicle(4);
+        this.selectedPlanet = this.utils.InitializePlanet(4);
         this.resource1.length = 0;
         for(let i =0;i<4;i++){
             this.selectedPlanetBoolArr.push(false);
