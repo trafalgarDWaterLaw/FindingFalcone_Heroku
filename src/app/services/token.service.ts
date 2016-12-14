@@ -22,7 +22,9 @@ import 'rxjs/add/operator/toPromise';
     private parseResponseToken(res:any){
         let token = res.token;
         if(token != undefined){
-            sessionStorage.setItem("token", token);
+            let strTkn = sessionStorage.getItem("token")
+            if(strTkn === undefined)
+                sessionStorage.setItem("token", token);
         }
     }
 }
